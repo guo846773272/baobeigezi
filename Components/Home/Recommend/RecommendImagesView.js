@@ -72,6 +72,7 @@ class RecommendImagesBottomView extends Component{
 
     render(){
         let list = this.props.jsonData.data[5].data.list;
+        if (list.length == 0 || list == null || !list) return null;
         return (
             <View>
                 {this._renderModule(list.slice(0,3))}

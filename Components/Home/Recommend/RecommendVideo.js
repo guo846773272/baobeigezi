@@ -198,7 +198,6 @@ class VideoImagesView extends Component{
     }
 
     _renderPage(data,pageID){
-        console.log(data);
         return(
 
             <TouchableOpacity

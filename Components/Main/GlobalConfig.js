@@ -14,25 +14,25 @@ gmyGlobal.host = 'http://v266.ma2.baobeigezi.com';
 
 gmyGlobal.width = width;
 
-gmyGlobal._saveData = ((key,jsonData) => {
-
-    try {
-        AsyncStorage.setItem(
-            key,
-
-            JSON.stringify(jsonData),
-            (error)=> {
-                if (error) {
-                    console.log('存值失败:', error);
-                } else {
-                    console.log('存值成功!');
-                }
-            }
-        );
-    } catch (error) {
-        console.log('失败' + error);
-    }
-});
+// gmyGlobal._saveData = ((key,jsonData) => {
+//
+//     try {
+//         AsyncStorage.setItem(
+//             key,
+//
+//             JSON.stringify(jsonData),
+//             (error)=> {
+//                 if (error) {
+//                     console.log('存值失败:', error);
+//                 } else {
+//                     console.log('存值成功!');
+//                 }
+//             }
+//         );
+//     } catch (error) {
+//         console.log('失败' + error);
+//     }
+// });
 
 
 
@@ -75,6 +75,25 @@ gmyGlobal._getData = ((key,successCallback,errorCallback) => {
         if (errorCallback) errorCallback();
     }
 
+});
+
+gmyGlobal._deleteData = ((key,successCallback,errorCallback) => {
+
+    try {
+        AsyncStorage.removeItem(
+            key,
+            (error)=> {
+                if (error) {
+                    
+                } else {
+                    if (successCallback) successCallback();
+                }
+            }
+        );
+    } catch (error) {
+        // console.log('失败' + error);
+        if (errorCallback) errorCallback();
+    }
 });
 
 

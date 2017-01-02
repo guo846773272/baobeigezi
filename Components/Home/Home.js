@@ -29,47 +29,17 @@ let {width,height} = Dimensions.get('window');
 
 export default class Home extends Component {
 
-    // 构造
-      constructor(props) {
-        super(props);
-        // 初始状态
-        this.state = {
-            scrollImagesData:[123123,21321321,213213]
-        };
-      }
-
-
     render() {
         return (
             <View style={styles.container}>
-
-                {/*
-
-
-
-                */}
-
-
-
-                <HomeNavBar />
-
+                <HomeNavBar
+                    navigator={this.props.navigator}
+                />
 
                 <HomeController />
-                {/*
-
-                 <HomeTitlesView />
-
-                 <Recommend />
-
-                */}
-
-
-                
             </View>
         );
     }
-
-    
 }
 
 const styles = StyleSheet.create({
